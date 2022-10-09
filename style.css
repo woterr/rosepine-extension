@@ -1,0 +1,163 @@
+/* Import */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+@import url("http://fonts.cdnfonts.com/css/pier-sans");
+
+/* Root colors  */
+:root {
+  --base: #191724;
+  --surface: #1f1d2e;
+  --overlay: #26233a;
+  --muted: #6e6a86;
+  --subtle: #908caa;
+  --text: #e0def4;
+  --love: #eb6f92;
+  --gold: #f6c177;
+  --rose: #ebbcba;
+  --pine: #31748f;
+  --foam: #9ccfd8;
+  --iris: #c4a7e7;
+  --highlight-low: #21202e;
+  --highlight-med: #403d52;
+  --highlight-high: #524f67;
+
+  --heading-font: "Pier Sans", sans-serif;
+  --body-font: "Poppins", sans-serif;
+}
+
+::selection {
+  background: var(--overlay);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--base);
+  color: var(--text);
+  font-family: var(--body-font);
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+}
+
+.container {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3rem;
+  min-height: 100vh;
+  position: relative;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--heading-font);
+  line-height: 1.75rem;
+}
+
+p {
+  color: var(--muted);
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.settings {
+  font-size: 1.25rem;
+  padding: 0.5rem;
+  background: var(--overlay);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.settings:hover {
+  background: var(--highlight-med);
+  transition: all 0.3s;
+}
+
+.centre {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 7rem;
+  width: 100%;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.input-wrap {
+  background-color: var(--surface);
+  width: 642px;
+  height: 56px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+#search:-webkit-autofill,
+#search {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1rem;
+  font-family: var(--body-font);
+  color: var(--text);
+  line-height: 1.5;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+#search::placeholder {
+  color: var(--muted);
+}
+
+#search:-webkit-autofill:hover,
+#search:hover {
+  background: var(--overlay);
+  transition: all 0.3s ease;
+}
+
+#search:-webkit-autofill:focus,
+#search:focus {
+  background: var(--overlay);
+}
+
+#search:-webkit-autofill:active,
+#search:active {
+  background: var(--overlay);
+}
+
+.search-icon {
+  background: var(--surface);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.search-icon i {
+  font-size: 1.5rem;
+  padding: 1rem;
+  color: var(--text);
+}
+
+.search-icon:hover {
+  background: var(--highlight-med);
+  transition: all 0.3s;
+}
+
+#time {
+  font-size: 5rem;
+  margin-bottom: 2rem;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Tab</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="./Images//TwoToneCircleHeart.png"
+      type="image/png"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="overlay"></div>
+      <div class="top">
+        <h4>Rosé Pine</h4>
+        <i class="bx bx-cog settings"></i>
+      </div>
+      <form class="centre" id="form" autocomplete="off">
+        <h1 id="time"></h1>
+        <div class="input-wrap">
+          <input
+            type="text"
+            name="q"
+            id="search"
+            placeholder="Animals, plants, recipes..."
+          />
+          <button type="submit" class="search-icon" id="search-btn">
+            <i class="bx bx-search-alt-2"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let query = document.getElementById("search");
+        let searchBtn = document.getElementById("search-btn");
+
+        const form = document
+          .getElementById("form")
+          .addEventListener("submit", function (e) {
+            e.preventDefault();
+            let url = "https://www.google.com/search?q=" + query.value;
+            window.open(url, "_self");
+          });
+
+        searchBtn.addEventListener("click", function () {
+          let url = "https://www.google.com/search?q=" + query.value;
+          window.open(url, "_self");
+        });
+      });
+    </script>
+    <script>
+      const time = getTime();
+      document.getElementById("time").textContent = time;
+      setInterval(() => {
+        const time = getTime();
+        document.getElementById("time").textContent = time;
+      }, 1000);
+
+      function getTime() {
+        const today = new Date();
+        let min = today.getMinutes();
+        let hr = today.getHours();
+        if (today.getMinutes() < 10) {
+          min = "0" + today.getMinutes();
+        }
+        if (today.getHours() <= 9) {
+          hr = "0" + today.getHours();
+        }
+        const time = hr + ":" + min;
+
+        return time;
+      }
+    </script>
+  </body>
+</html>
